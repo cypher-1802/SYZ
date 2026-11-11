@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Design A — Framed Arch</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Marcellus&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+        font-family: 'Cormorant Garamond', serif;
+        background: #f4ede3;
+        color: #3d3345;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 24px 12px;
+    }
+    .card {
+        position: relative;
+        width: 100%;
+        max-width: 460px;
+        aspect-ratio: auto;
+        background: url('../waleema%20-theme.jpeg') center top / 100% auto no-repeat, #e9c5c0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(0,0,0,.15);
+    }
+    /* mirrored image at bottom */
+    .card::after {
+        content: '';
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        height: 42%;
+        background: url('../waleema%20-theme.jpeg') center bottom / 100% auto no-repeat;
+        transform: scaleY(-1);
+        z-index: 0;
+        opacity: .95;
+    }
+    .content {
+        position: relative;
+        z-index: 1;
+        padding: 34% 32px 40% 32px;
+        text-align: center;
+        color: #4a3540;
+    }
+    .names {
+        font-family: 'Great Vibes', cursive;
+        font-size: clamp(38px, 11vw, 54px);
+        color: #6f5b95;
+        line-height: 1.05;
+    }
+    .weds {
+        display: block;
+        font-style: italic;
+        color: #8a6a3a;
+        font-size: 18px;
+        margin: 4px 0;
+    }
+    .date {
+        font-family: 'Marcellus', serif;
+        font-size: 15px;
+        letter-spacing: 4px;
+        color: #6a4a5a;
+        margin-top: 14px;
+        text-transform: uppercase;
+    }
+    .venue {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 17px;
+        color: #4a3540;
+        font-style: italic;
+        margin-top: 10px;
+    }
+    .divider {
+        width: 60px; height: 1px;
+        background: #b8965a;
+        margin: 14px auto;
+    }
+</style>
+</head>
+<body>
+    <div class="card">
+        <div class="content">
+            <div class="names">
+                Fayaz
+                <span class="weds">weds</span>
+                Saheba
+            </div>
+            <div class="divider"></div>
+            <div class="date">18 · 11 · 2026</div>
+            <div class="venue">Kings Lawn · Nagpur</div>
+        </div>
+    </div>
+</body>
+</html>

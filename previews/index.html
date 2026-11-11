@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Design Preview — Pick your card style</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Marcellus&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+        font-family: 'Cormorant Garamond', serif;
+        background: linear-gradient(160deg, #f8f4ec 0%, #efe7dd 100%);
+        color: #3d3345;
+        padding: 40px 20px 80px;
+        min-height: 100vh;
+    }
+    h1 {
+        text-align: center;
+        font-family: 'Marcellus', serif;
+        color: #5a4a3a;
+        letter-spacing: 3px;
+        font-size: 22px;
+    }
+    p.lead { text-align: center; max-width: 640px; margin: 12px auto 40px; font-size: 16px; color: #6a5a4a; font-style: italic; }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .card {
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.08);
+        text-align: center;
+    }
+    .card h2 {
+        font-family: 'Marcellus', serif;
+        color: #5e7a5c;
+        letter-spacing: 3px;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    .card .desc { color: #6a5a4a; font-size: 15px; margin: 10px 0 20px; font-style: italic; }
+    .thumb {
+        aspect-ratio: 9 / 12;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 16px;
+        border: 1px solid rgba(0,0,0,.06);
+        background: #f7f0dc;
+    }
+    .thumb iframe {
+        width: 200%;
+        height: 200%;
+        border: 0;
+        transform: scale(.5);
+        transform-origin: top left;
+        pointer-events: none;
+    }
+    .btn {
+        display: inline-block;
+        padding: 12px 26px;
+        background: linear-gradient(160deg, #8b6db0, #6f5b95);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 999px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 6px;
+    }
+    footer { text-align:center; margin-top:50px; color:#8a6a3a; font-family:'Montserrat',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; }
+</style>
+</head>
+<body>
+    <h1>Choose a Card Design</h1>
+    <p class="lead">Three light-themed directions for the invitation card that appears after the envelope opens. Open each preview on your phone to compare — then tell me which one to apply to Nikah &amp; Waleema.</p>
+
+    <div class="grid">
+        <div class="card">
+            <div class="thumb"><iframe src="design-a.html" title="Design A" loading="lazy"></iframe></div>
+            <h2>A · Framed Arch</h2>
+            <p class="desc">Theme image forms an ornamental frame — flowers at top, arch at bottom — content sits inside the empty middle. Most decorative.</p>
+            <a class="btn" href="design-a.html" target="_blank">Open Design A</a>
+        </div>
+
+        <div class="card">
+            <div class="thumb"><iframe src="design-b.html" title="Design B" loading="lazy"></iframe></div>
+            <h2>B · Watercolor Hero</h2>
+            <p class="desc">Soft floral hero banner at the top with all information cleanly below on cream paper. Balanced &amp; elegant.</p>
+            <a class="btn" href="design-b.html" target="_blank">Open Design B</a>
+        </div>
+
+        <div class="card">
+            <div class="thumb"><iframe src="design-c.html" title="Design C" loading="lazy"></iframe></div>
+            <h2>C · Classic Paper</h2>
+            <p class="desc">No photo — just cream paper, gold double border, ornate SVG florals in the corners, refined typography. Timeless.</p>
+            <a class="btn" href="design-c.html" target="_blank">Open Design C</a>
+        </div>
+    </div>
+
+    <footer>Reply with A, B, or C and I&#39;ll apply it to both invitations.</footer>
+</body>
+</html>

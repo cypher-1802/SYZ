@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fayaz & Saheba — Waleema Invitation</title>
+<meta name="description" content="Waleema invitation of Fayaz and Saheba, 30 December 2026." />
+<link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Marcellus&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+/>
+<style>
+    :root {
+        --gold: #b8965a;
+        --gold-2: #8a6a3a;
+        --gold-light: #d9b878;
+        --emerald: #8b6db0;         /* lavender (primary accent) */
+        --emerald-2: #a894c9;
+        --emerald-deep: #6f5b95;
+        --cream: #f5f0fa;
+        --cream-2: #fbf7fe;
+        --ink: #3d3345;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+        font-family: 'Cormorant Garamond', serif;
+        color: var(--ink);
+        background: linear-gradient(160deg, #f7f2ea 0%, #ece0ea 60%, #f7f2ea 100%);
+        overflow-x: hidden;
+        min-height: 100vh;
+    }
+
+    /* Subtle Islamic geometric pattern overlay */
+    /* Geometric pattern overlay disabled — theme image is the backdrop */
+    body::before { content: none; }
+
+    .stage {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 16px;
+    }
+
+    /* ---------------- ENVELOPE (~80% of viewport) ---------------- */
+    .envelope-wrap {
+        position: relative;
+        width: min(80vw, 480px);
+        height: 80vh;
+        height: 80svh;
+        max-height: 80svh;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 14px;
+        box-shadow: 0 30px 60px rgba(0,0,0,.45), 0 12px 25px rgba(0,0,0,.25);
+        transition: transform .8s cubic-bezier(.6,.05,.2,1), opacity .8s ease, box-shadow .3s ease;
+    }
+    .envelope-wrap:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 40px 80px rgba(0,0,0,.55); }
+    .envelope-wrap.animate-open { transform: scale(.985); }
+    .envelope-wrap.opened { transform: translateY(-30px) scale(.94); opacity: 0; pointer-events: none; }
+
+    .envelope-img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        display: block;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    .env-hint {
+        position: absolute;
+        left: 50%; bottom: max(6vh, 30px);
+        transform: translateX(-50%);
+        color: #5a3f13;
+        background: rgba(255,255,255,.78);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        padding: 12px 28px;
+        border-radius: 999px;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 4px;
+        font-size: 11px;
+        text-transform: uppercase;
+        animation: pulseHint 2.2s ease-in-out infinite;
+        z-index: 2;
+        white-space: nowrap;
+        box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    @keyframes pulseHint {
+        0%, 100% { opacity: .85; transform: translate(-50%, 0); }
+        50% { opacity: 1; transform: translate(-50%, -4px); }
+    }
+
+    /* ---------------- CARD ---------------- */
+    .card-wrap {
+        position: fixed;
+        inset: 0;
+        display: none;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        z-index: 5;
+    }
+    .card-wrap.show { display: block; animation: fadeIn .8s ease both; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .card {
+        max-width: 720px;
+        margin: 40px auto;
+        background:
+            radial-gradient(600px 400px at 50% 0%, rgba(184,150,90,.10), transparent 70%),
+            linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%);
+        border-radius: 8px;
+        box-shadow:
+            0 30px 60px rgba(0,0,0,.20),
+            0 12px 25px rgba(0,0,0,.10);
+        position: relative;
+        overflow: hidden;
+    }
+    /* Hero banner (Design B) */
+    .hero {
+        position: relative;
+        height: clamp(200px, 32vh, 280px);
+        background: url('../nikah%20theme.jpeg') center top / cover no-repeat;
+    }
+    .hero::after {
+        content: '';
+        position: absolute; left: 0; right: 0; bottom: 0;
+        height: 60px;
+        background: linear-gradient(180deg, transparent, var(--cream-2));
+    }
+    /* Legacy borders — disabled for clean Design B look */
+    .card::before, .card::after { content: none; }
+    .corner { display: none; }
+
+    .inner {
+        position: relative;
+        z-index: 2;
+        padding: 30px 55px 60px;
+    }
+
+    .section {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .9s ease, transform .9s ease;
+    }
+    .section.visible { opacity: 1; transform: translateY(0); }
+
+    .bismillah {
+        text-align: center;
+        font-family: 'Amiri', serif;
+        font-size: 30px;
+        color: var(--emerald);
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+    .bismillah-en {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 4px;
+        font-size: 10px;
+        color: var(--gold-2);
+        text-transform: uppercase;
+        margin-bottom: 26px;
+    }
+
+    .ornament {
+        display: flex; align-items: center; justify-content: center;
+        gap: 14px;
+        margin: 22px 0;
+        color: var(--gold-2);
+    }
+    .ornament .line {
+        flex: 0 0 90px; height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .ornament .icon { font-family: 'Amiri', serif; font-size: 20px; }
+
+    .ayah {
+        text-align: center;
+        font-family: 'Amiri', serif;
+        font-size: 22px;
+        color: var(--emerald);
+        line-height: 1.9;
+        margin: 12px 0;
+        direction: rtl;
+    }
+    .ayah-en {
+        text-align: center;
+        font-style: italic;
+        font-size: 17px;
+        color: #4d3b28;
+        margin-top: 10px;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+    .ayah-ref {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        letter-spacing: 4px;
+        color: var(--gold-2);
+        text-transform: uppercase;
+        margin-top: 8px;
+    }
+
+    .invite-line {
+        text-align: center;
+        font-size: 17px;
+        color: #4a3826;
+        font-style: italic;
+        line-height: 1.6;
+    }
+    .host {
+        text-align: center;
+        font-family: 'Marcellus', serif;
+        font-size: 20px;
+        color: var(--emerald);
+        margin-top: 10px;
+        letter-spacing: 1px;
+    }
+
+    .names {
+        text-align: center;
+        font-family: 'Great Vibes', cursive;
+        color: var(--emerald);
+        line-height: 1.05;
+        margin: 18px 0 8px;
+        padding: 0 4px;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+    .name-bride { font-size: clamp(44px, 12vw, 68px); }
+    .name-groom { font-size: clamp(32px, 9vw, 62px); }
+    .floral-spray {
+        display: block;
+        margin: 14px auto 4px;
+        width: min(340px, 82%);
+        height: auto;
+        opacity: .9;
+    }
+    .floral-spray.flip { transform: rotate(180deg); margin: 6px auto 14px; }
+    .weds {
+        display: block;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        color: var(--gold-2);
+        font-size: 22px;
+        margin: 6px 0;
+    }
+    .son-of {
+        text-align: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 15px;
+        color: #6c5335;
+        margin-top: -4px;
+        font-style: italic;
+    }
+
+    /* Scratch */
+    .scratch-title {
+        text-align: center;
+        font-family: 'Marcellus', serif;
+        font-size: 15px;
+        letter-spacing: 4px;
+        color: var(--gold-2);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+    .scratch-sub {
+        text-align: center;
+        font-size: 15px;
+        color: #6c5335;
+        font-style: italic;
+        margin-bottom: 14px;
+    }
+    .scratch-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        aspect-ratio: 5 / 3;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(139,109,176,.25), inset 0 0 0 1px var(--gold);
+        background: var(--cream);
+    }
+    .scratch-reveal {
+        position: absolute; inset: 0;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        background: linear-gradient(160deg, #a894c9, #6f5b95);
+        color: var(--cream);
+        padding: 24px;
+        text-align: center;
+    }
+    .scratch-reveal .big-date {
+        font-family: 'Marcellus', serif;
+        font-size: 34px;
+        letter-spacing: 6px;
+        color: var(--gold-light);
+        text-transform: uppercase;
+    }
+    .scratch-reveal .hijri {
+        font-family: 'Amiri', serif;
+        font-size: 18px;
+        color: var(--gold);
+        margin: 8px 0;
+    }
+    .scratch-reveal .after {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 20px;
+        color: var(--cream);
+        margin-top: 8px;
+    }
+    #scratchCanvas {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        cursor: grab;
+        touch-action: none;
+    }
+    .scratch-hint {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        letter-spacing: 3px;
+        color: var(--gold-2);
+        text-transform: uppercase;
+        margin-top: 12px;
+        opacity: .8;
+    }
+
+    /* Countdown */
+    .countdown {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        max-width: 460px;
+        margin: 24px auto 0;
+    }
+    .cd-box {
+        background: linear-gradient(160deg, #8b6db0, #6f5b95);
+        color: var(--gold-light);
+        border: 1px solid var(--gold);
+        border-radius: 6px;
+        padding: 14px 6px;
+        text-align: center;
+    }
+    .cd-num {
+        font-family: 'Marcellus', serif;
+        font-size: 26px;
+        color: var(--gold-light);
+        line-height: 1;
+    }
+    .cd-lbl {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 9px;
+        letter-spacing: 3px;
+        margin-top: 6px;
+        color: var(--gold);
+        text-transform: uppercase;
+    }
+
+    /* Venue */
+    .venue-title {
+        text-align: center;
+        font-family: 'Marcellus', serif;
+        font-size: 13px;
+        letter-spacing: 5px;
+        color: var(--gold-2);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    .venue-name {
+        text-align: center;
+        font-family: 'Marcellus', serif;
+        font-size: 22px;
+        color: var(--emerald);
+    }
+    .venue-city {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        letter-spacing: 3px;
+        color: #6c5335;
+        margin-top: 6px;
+        text-transform: uppercase;
+    }
+
+    .actions {
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+        margin-top: 20px;
+    }
+    .btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 11px 20px;
+        border-radius: 999px;
+        background: linear-gradient(160deg, #a894c9, #6f5b95);
+        color: var(--gold-light);
+        border: 1px solid var(--gold);
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.25); }
+    .btn.ghost {
+        background: transparent;
+        color: var(--emerald);
+        border-color: var(--gold-2);
+    }
+
+    .dua {
+        text-align: center;
+        font-style: italic;
+        font-size: 17px;
+        color: #4d3b28;
+        line-height: 1.7;
+        padding: 0 12px;
+    }
+    .closing {
+        text-align: center;
+        font-family: 'Great Vibes', cursive;
+        color: var(--emerald);
+        font-size: 30px;
+        line-height: 1.3;
+        margin-top: 8px;
+    }
+    .footer-note {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        letter-spacing: 3px;
+        color: var(--gold-2);
+        text-transform: uppercase;
+        margin-top: 14px;
+    }
+
+    /* Petals */
+    .petals {
+        position: fixed; inset: 0;
+        pointer-events: none;
+        z-index: 4;
+        overflow: hidden;
+    }
+    .petal {
+        position: absolute;
+        top: -30px;
+        width: 14px; height: 14px;
+        border-radius: 50% 0 50% 0;
+        background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        opacity: 0;
+        animation: fall linear forwards;
+        box-shadow: 0 0 6px rgba(240, 217, 154, .6);
+    }
+    @keyframes fall {
+        0%   { opacity: 0; transform: translateY(-30px) rotate(0deg); }
+        10%  { opacity: 1; }
+        100% { opacity: 0; transform: translateY(105vh) rotate(720deg); }
+    }
+
+    /* Replay */
+    .replay {
+        position: fixed;
+        bottom: 18px; right: 18px;
+        z-index: 20;
+        display: none;
+    }
+    .card-wrap.show ~ .replay { display: inline-flex; }
+
+    @media (max-width: 560px) {
+        .inner { padding: 55px 22px; }
+        .ayah { font-size: 20px; }
+        .bismillah { font-size: 26px; }
+        .cd-num { font-size: 22px; }
+        .countdown { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .actions .btn { padding: 10px 14px; font-size: 10px; letter-spacing: 2px; }
+    }
+    @media (max-width: 380px) {
+        .inner { padding: 45px 16px; }
+        .card::before { inset: 12px; }
+        .card::after  { inset: 18px; }
+        .corner { width: 60px; height: 60px; top: 16px; }
+        .corner.bl, .corner.br { bottom: 16px; top: auto; }
+        .corner.tr, .corner.br { right: 16px; }
+        .corner.tl, .corner.bl { left: 16px; }
+    }
+
+    @media print {
+        body { background: #fff; }
+        body::before, .petals, .replay, .actions { display: none !important; }
+        .card-wrap { position: static; display: block !important; }
+        .card { box-shadow: none; margin: 0; }
+        .section { opacity: 1 !important; transform: none !important; }
+        #scratchCanvas { display: none; }
+    }
+
+    /* ---------------- Personalization ---------------- */
+    .greeting {
+        text-align: center;
+        background: linear-gradient(180deg, rgba(184,150,90,.10), rgba(184,150,90,.02));
+        border: 1px solid rgba(184,150,90,.35);
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin: 0 auto 24px;
+        max-width: 460px;
+    }
+    .greet-salaam {
+        font-family: 'Amiri', serif;
+        color: var(--gold-2);
+        font-size: 14px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+    .greet-name {
+        font-family: 'Great Vibes', cursive;
+        color: var(--emerald);
+        font-size: clamp(28px, 8vw, 40px);
+        line-height: 1.1;
+        margin: 4px 0 6px;
+    }
+    .greet-msg {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 15px;
+        color: #6a5a4a;
+    }
+    .name-ar {
+        display: block;
+        font-family: 'Amiri', serif;
+        color: var(--emerald);
+        opacity: .8;
+        font-size: clamp(18px, 4.5vw, 22px);
+        line-height: 1.4;
+        margin: 2px 0 6px;
+        direction: rtl;
+    }
+    .prog-title, .contact-title {
+        text-align: center;
+        font-family: 'Marcellus', serif;
+        font-size: 13px;
+        letter-spacing: 5px;
+        color: var(--gold-2);
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+    .prog-list {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+    .prog-row {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 14px;
+        padding: 9px 0;
+        border-bottom: 1px dashed rgba(184,150,90,.3);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 16px;
+        color: var(--ink);
+        text-align: left;
+    }
+    .prog-row:last-child { border-bottom: none; }
+    .prog-row .time {
+        font-family: 'Marcellus', serif;
+        color: var(--emerald);
+        letter-spacing: 1px;
+        text-align: right;
+        font-size: 13px;
+    }
+    .contact-list {
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    }
+    .contact-list a {
+        display: inline-flex; align-items: center; gap: 6px;
+        padding: 10px 18px;
+        border: 1px solid var(--gold-2);
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--emerald);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 15px;
+        background: rgba(255,255,255,.5);
+        transition: transform .2s ease, background .2s ease;
+    }
+    .contact-list a:hover { transform: translateY(-2px); background: rgba(184,150,90,.12); }
+    .dress-code {
+        text-align: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 16px;
+        color: #6a5a4a;
+        margin-top: 14px;
+        letter-spacing: 1px;
+    }
+    .hashtag {
+        text-align: center;
+        font-family: 'Marcellus', serif;
+        font-size: 12px;
+        letter-spacing: 3px;
+        color: var(--gold-2);
+        margin-top: 10px;
+    }
+    .btn.whatsapp {
+        background: linear-gradient(160deg, #25d366, #128c7e);
+        color: #fff;
+        border-color: #128c7e;
+    }
+</style>
+</head>
+<body>
+
+<!-- ENVELOPE STAGE -->
+<div class="stage" id="stage">
+    <div class="envelope-wrap" id="envelope" role="button" tabindex="0" aria-label="Open the invitation">
+        <img class="envelope-img" src="../envelope.jpeg" alt="Wedding envelope" draggable="false" />
+        <div class="env-hint">Tap to open ✲</div>
+    </div>
+</div>
+
+<!-- CARD -->
+<div class="card-wrap" id="cardWrap" aria-hidden="true">
+    <article class="card">
+        <div class="hero" aria-hidden="true"></div>
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
+
+        <div class="inner">
+            <section class="section greeting" id="greeting" hidden>
+                <p class="greet-salaam">Assalamu Alaikum</p>
+                <p class="greet-name">Dear <span id="guestName"></span></p>
+                <p class="greet-msg">We would be honoured by your presence, InshaAllah</p>
+            </section>
+
+            <section class="section">
+                <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+                <div class="bismillah-en">In the name of Allah, the Most Gracious, the Most Merciful</div>
+            </section>
+
+            <div class="ornament"><span class="line"></span><span class="icon">❁</span><span class="line"></span></div>
+
+            <section class="section">
+                <p class="ayah">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+                <p class="ayah-en">“And among His Signs is that He created for you spouses from among yourselves so that you may find tranquility in them; and He has placed between you affection and mercy.”</p>
+                <p class="ayah-ref">— Qur'an 30:21 · Surah Ar-Rum</p>
+            </section>
+
+            <div class="ornament"><span class="line"></span><span class="icon">✦</span><span class="line"></span></div>
+
+            <section class="section">
+                <p class="ayah">هُنَّ لِبَاسٌ لَّكُمْ وَأَنتُمْ لِبَاسٌ لَّهُنَّ</p>
+                <p class="ayah-en">“They are a garment for you, and you are a garment for them.”</p>
+                <p class="ayah-ref">— Qur'an 2:187 · Surah Al-Baqarah</p>
+            </section>
+
+            <div class="ornament"><span class="line"></span><span class="icon">✦</span><span class="line"></span></div>
+
+            <section class="section">
+                <p class="invite-line">Bismillahir Rahmanir Raheem</p>
+                <p class="host">Mr. Shaikh Alemul and Mrs. Hamidun Nisha</p>
+                <p class="invite-line">cordially requests the honour of your presence at the Waleema, In Shaa Allah, of her aziz son</p>
+
+                <div class="names">
+                    <span class="name-bride">Shaikh Fayazul Amin</span>
+                    <span class="name-ar">شايخ فايازول امين</span>
+                    <span class="weds">weds</span>
+                    <span class="name-groom">Saheba Khanam</span>
+                    <span class="name-ar">صاحبة خانم</span>
+                </div>
+                <p class="son-of">(D/o. Mr. Khan)</p>
+
+                <!-- Floral spray (rose-gold + burgundy) -->
+                <svg class="floral-spray" viewBox="0 0 300 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <g fill="none" stroke="#8a6a3a" stroke-width="1" stroke-linecap="round">
+                        <path d="M150 30 Q 120 22 90 28 Q 60 34 30 24"/>
+                        <path d="M150 30 Q 180 22 210 28 Q 240 34 270 24"/>
+                        <path d="M150 30 Q 140 44 120 50"/>
+                        <path d="M150 30 Q 160 44 180 50"/>
+                    </g>
+                    <g fill="#8b6db0" opacity="0.85">
+                        <circle cx="150" cy="30" r="5"/>
+                        <circle cx="90" cy="28" r="3.2"/>
+                        <circle cx="210" cy="28" r="3.2"/>
+                        <circle cx="120" cy="50" r="2.4"/>
+                        <circle cx="180" cy="50" r="2.4"/>
+                    </g>
+                    <g fill="#d9b878" opacity="0.9">
+                        <circle cx="30" cy="24" r="2.8"/>
+                        <circle cx="270" cy="24" r="2.8"/>
+                        <circle cx="150" cy="30" r="2"/>
+                        <ellipse cx="60" cy="30" rx="5" ry="2" transform="rotate(-20 60 30)"/>
+                        <ellipse cx="240" cy="30" rx="5" ry="2" transform="rotate(20 240 30)"/>
+                        <ellipse cx="135" cy="42" rx="4" ry="1.6" transform="rotate(-30 135 42)"/>
+                        <ellipse cx="165" cy="42" rx="4" ry="1.6" transform="rotate(30 165 42)"/>
+                    </g>
+                    <g fill="#6f8a5e" opacity="0.55">
+                        <ellipse cx="75" cy="32" rx="5" ry="2.2" transform="rotate(-25 75 32)"/>
+                        <ellipse cx="105" cy="26" rx="5" ry="2.2" transform="rotate(15 105 26)"/>
+                        <ellipse cx="45" cy="22" rx="5" ry="2.2" transform="rotate(-15 45 22)"/>
+                        <ellipse cx="225" cy="32" rx="5" ry="2.2" transform="rotate(25 225 32)"/>
+                        <ellipse cx="195" cy="26" rx="5" ry="2.2" transform="rotate(-15 195 26)"/>
+                        <ellipse cx="255" cy="22" rx="5" ry="2.2" transform="rotate(15 255 22)"/>
+                    </g>
+                </svg>
+            </section>
+
+            <div class="ornament"><span class="line"></span><span class="icon">❁</span><span class="line"></span></div>
+
+            <section class="section">
+                <div class="scratch-wrap">
+                    <div class="scratch-reveal">
+                        <div class="big-date">30 December 2026</div>
+                        <div class="hijri">21 Rajab 1448 AH</div>
+                        <div class="after">Evening · After Maghrib</div>
+                    </div>
+                </div>
+
+                <div class="countdown" id="countdown" aria-label="Countdown to the Waleema">
+                    <div class="cd-box"><div class="cd-num" id="cdD">--</div><div class="cd-lbl">Days</div></div>
+                    <div class="cd-box"><div class="cd-num" id="cdH">--</div><div class="cd-lbl">Hours</div></div>
+                    <div class="cd-box"><div class="cd-num" id="cdM">--</div><div class="cd-lbl">Minutes</div></div>
+                    <div class="cd-box"><div class="cd-num" id="cdS">--</div><div class="cd-lbl">Seconds</div></div>
+                </div>
+            </section>
+
+            <div class="ornament"><span class="line"></span><span class="icon">✦</span><span class="line"></span></div>
+
+            <section class="section">
+                <p class="venue-title">♡ Venue ♡</p>
+                <p class="venue-name">Kings Lawn</p>
+                <p class="venue-city">Nagpur · Near Humlog Villa</p>
+
+                <div class="actions">
+                    <a class="btn" target="_blank" rel="noopener"
+                       href="https://www.google.com/maps/dir/?api=1&destination=Kings+Lawn+near+Humlog+Villa%2C+Nagpur&travelmode=driving">
+                        📍 View on Map
+                    </a>
+                    <a class="btn ghost" id="calBtn" target="_blank" rel="noopener" href="#">
+                        🗓 Add to Calendar
+                    </a>
+                </div>
+            </section>
+
+            <div class="ornament"><span class="line"></span><span class="icon">✦</span><span class="line"></span></div>
+
+            <section class="section">
+                <p class="prog-title">Programme</p>
+                <div class="prog-list">
+                    <div class="prog-row"><span class="time">08:00 PM</span><span>Guest Welcome</span></div>
+                    <div class="prog-row"><span class="time">08:30 PM</span><span>Waleema Reception</span></div>
+                    <div class="prog-row"><span class="time">09:00 PM</span><span>Dawat-e-Waleema (Lunch)</span></div>
+                    <div class="prog-row"><span class="time">10:30 PM</span><span>Dua &amp; Blessings</span></div>
+                </div>
+            </section>
+
+            <div class="ornament"><span class="line"></span><span class="icon">❁</span><span class="line"></span></div>
+
+            <section class="section">
+                <p class="dua">“May Allah bless this union with love, mercy, understanding and barakah, and may He make their journey together a source of peace and happiness. Ameen.”</p>
+                <p class="footer-note" style="margin-top:16px">Please remember us in your duas</p>
+                <p class="closing">A special day,<br/>a beautiful beginning,<br/><em>InshaAllah.</em></p>
+                <p class="hashtag">#FayazWedsSaheba · #WaleemaMubarak2026</p>
+            </section>
+        </div>
+    </article>
+    <div style="height:40px"></div>
+</div>
+
+<!-- Petal overlay -->
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<!-- Replay button -->
+<button class="btn replay" id="replayBtn" title="Replay envelope">↺ Replay</button>
+
+<script>
+(() => {
+    // ---------- Personalized greeting via ?to= URL parameter ----------
+    try {
+        const guest = new URLSearchParams(location.search).get('to');
+        if (guest) {
+            const nameEl = document.getElementById('guestName');
+            const box    = document.getElementById('greeting');
+            if (nameEl && box) {
+                nameEl.textContent = decodeURIComponent(guest.replace(/\+/g, ' '));
+                box.hidden = false;
+            }
+        }
+    } catch(_) {}
+
+    const envelope = document.getElementById('envelope');
+    const cardWrap = document.getElementById('cardWrap');
+    const petals   = document.getElementById('petals');
+    const replayBtn= document.getElementById('replayBtn');
+
+    // ---------- Envelope open ----------
+    function openEnvelope() {
+        envelope.classList.add('animate-open');
+        setTimeout(() => {
+            envelope.classList.add('opened');
+            cardWrap.classList.add('show');
+            cardWrap.setAttribute('aria-hidden','false');
+            revealSections();
+            spawnPetals(28);
+        }, 900);
+    }
+    envelope.addEventListener('click', openEnvelope);
+    envelope.addEventListener('keypress', e => { if (e.key === 'Enter' || e.key === ' ') openEnvelope(); });
+    envelope.tabIndex = 0;
+
+    replayBtn.addEventListener('click', () => {
+        cardWrap.classList.remove('show');
+        cardWrap.setAttribute('aria-hidden','true');
+        envelope.classList.remove('opened','animate-open');
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+        window.scrollTo({top:0, behavior:'instant'});
+    });
+
+    // ---------- Section reveal on scroll ----------
+    const sections = document.querySelectorAll('.section');
+    function revealSections() {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(en => {
+                if (en.isIntersecting) {
+                    en.target.classList.add('visible');
+                    io.unobserve(en.target);
+                }
+            });
+        }, { threshold: 0.15, root: cardWrap });
+        sections.forEach(s => io.observe(s));
+        // First few immediate
+        setTimeout(()=> sections[0]?.classList.add('visible'), 100);
+        setTimeout(()=> sections[1]?.classList.add('visible'), 350);
+    }
+
+    // ---------- Petals ----------
+    function spawnPetals(n) {
+        for (let i=0; i<n; i++) {
+            const p = document.createElement('span');
+            p.className = 'petal';
+            const size = 8 + Math.random()*14;
+            p.style.width  = size+'px';
+            p.style.height = size+'px';
+            p.style.left = (Math.random()*100)+'vw';
+            p.style.animationDuration = (5 + Math.random()*6)+'s';
+            p.style.animationDelay = (Math.random()*3)+'s';
+            p.style.background = Math.random() > .5
+                ? 'linear-gradient(135deg,#f0d99a,#d4af6a)'
+                : 'linear-gradient(135deg,#ffe8b0,#b8894a)';
+            petals.appendChild(p);
+            setTimeout(()=> p.remove(), 12000);
+        }
+    }
+    // Continuous petals slowly
+    setInterval(() => {
+        if (cardWrap.classList.contains('show')) spawnPetals(2);
+    }, 2500);
+
+    // ---------- Countdown ----------
+    // Waleema reception on 18 Nov 2026, 8:00 PM IST.
+    const target = new Date('2026-11-18T20:00:00+05:30').getTime();
+    const cdD = document.getElementById('cdD');
+    const cdH = document.getElementById('cdH');
+    const cdM = document.getElementById('cdM');
+    const cdS = document.getElementById('cdS');
+    function tick() {
+        const now = Date.now();
+        let diff = Math.max(0, target - now);
+        const d = Math.floor(diff / 86400000); diff -= d*86400000;
+        const h = Math.floor(diff / 3600000);  diff -= h*3600000;
+        const m = Math.floor(diff / 60000);    diff -= m*60000;
+        const s = Math.floor(diff / 1000);
+        cdD.textContent = String(d).padStart(2,'0');
+        cdH.textContent = String(h).padStart(2,'0');
+        cdM.textContent = String(m).padStart(2,'0');
+        cdS.textContent = String(s).padStart(2,'0');
+    }
+    tick(); setInterval(tick, 1000);
+
+    // ---------- Add to Calendar (Google) ----------
+    const calBtn = document.getElementById('calBtn');
+    const start = '20261230T143000Z'; // 20:00 IST = 14:30 UTC
+    const end   = '20261230T170000Z'; // 22:30 IST = 17:00 UTC
+    const calUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('Waleema — Fayaz & Saheba')
+        + '&dates=' + start + '/' + end
+        + '&details=' + encodeURIComponent('Waleema reception. Please join us for the celebration and duas.')
+        + '&location=' + encodeURIComponent('Kings Lawn, near Humlog Villa, Nagpur');
+    calBtn.href = calUrl;
+})();
+</script>
+</body>
+</html>
