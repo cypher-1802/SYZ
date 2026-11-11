@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Fayaz &amp; Saheba — Invitations</title>
-<meta name="description" content="Nikah and Waleema invitations of Fayaz and Saheba." />
+<meta name="description" content="Haldi, Nikah and Waleema invitations of Fayaz and Saheba." />
 <link
     href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Marcellus&family=Montserrat:wght@300;400;500&display=swap"
     rel="stylesheet"
@@ -135,6 +135,11 @@
         background: linear-gradient(160deg, rgba(139,109,176,.22), rgba(168,148,201,.14));
         box-shadow: 0 6px 18px rgba(139,109,176,.15);
     }
+    .card.haldi {
+        grid-column: 1 / -1;
+        background: linear-gradient(160deg, rgba(232,168,40,.26), rgba(245,206,96,.16));
+        box-shadow: 0 6px 18px rgba(214,140,20,.18);
+    }
     .card:hover {
         transform: translateY(-6px);
         box-shadow: 0 20px 40px rgba(90,70,110,.25);
@@ -160,6 +165,7 @@
         margin: 4px 0 10px;
     }
     .card.waleema .title { color: #6f5b95; }
+    .card.haldi .title { color: #b5650d; }
     .card .date {
         font-family: 'Cormorant Garamond', serif;
         font-size: 17px;
@@ -232,21 +238,28 @@
             </g>
         </svg>
 
-        <p class="tag">Two ceremonies. One beautiful beginning, InshaAllah.</p>
+        <p class="tag">Three celebrations. One beautiful beginning, InshaAllah.</p>
 
         <div class="divider"><span class="line"></span><span class="icon">❁</span><span class="line"></span></div>
 
         <div class="cards">
+            <a class="card haldi" href="haldi/">
+                <div class="icon">✿</div>
+                <div class="label">Ceremony I</div>
+                <div class="title">Haldi</div>
+                <div class="date">26 December 2026 · Phulnakhra, Cuttack<br/><span style="font-size:14px;opacity:.85">6.30 PM onwards</span></div>
+                <span class="arrow">Open Invitation →</span>
+            </a>
             <a class="card nikah" href="nikah/">
                 <div class="icon">☾</div>
-                <div class="label">Ceremony I</div>
+                <div class="label">Ceremony II</div>
                 <div class="title">Nikah</div>
                 <div class="date">27 December 2026 · Cuttack<br/><span style="font-size:14px;opacity:.85">11.30 AM</span></div>
                 <span class="arrow">Open Invitation →</span>
             </a>
             <a class="card waleema" href="waleema/">
                 <div class="icon">✦</div>
-                <div class="label">Ceremony II</div>
+                <div class="label">Ceremony III</div>
                 <div class="title">Waleema</div>
                 <div class="date">30 December 2026 · Cuttack<br/><span style="font-size:14px;opacity:.85">12:30 PM</span></div>
                 <span class="arrow">Open Invitation →</span>
