@@ -722,7 +722,7 @@
                     <div class="scratch-reveal">
                         <div class="big-date">30 December 2026</div>
                         <div class="hijri">21 Rajab 1448 AH</div>
-                        <div class="after">Afternoon · 1 PM</div>
+                        <div class="after">Afternoon · 12:30 PM</div>
                     </div>
                 </div>
 
@@ -866,7 +866,7 @@
     }, 2500);
 
     // ---------- Countdown ----------
-    // Waleema reception on 18 Nov 2026, 8:00 PM IST.
+    // Waleema reception on 30 Dec 2026, 12:30 PM IST.
     const target = new Date('2026-12-30T12:30:00+05:30').getTime();
     const cdD = document.getElementById('cdD');
     const cdH = document.getElementById('cdH');
@@ -888,8 +888,8 @@
 
     // ---------- Add to Calendar (Google) ----------
     const calBtn = document.getElementById('calBtn');
-    const start = '20261230T123000Z'; // 12:00 PM IST = 06:30 UTC
-    const end   = '20261230T150000Z'; // 03:00 PM IST = 09:30 UTC
+    const start = '20261230T070000Z'; // 12:30 PM IST = 07:00 UTC
+    const end   = '20261230T093000Z'; // 03:00 PM IST = 09:30 UTC
     const calUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
         + '&text=' + encodeURIComponent('Waleema — Fayaz & Saheba')
         + '&dates=' + start + '/' + end
