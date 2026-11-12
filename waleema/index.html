@@ -12,14 +12,16 @@
 <style>
     :root {
         --gold: #d8b45b;
-        --gold-2: #123f70;
-        --gold-light: #d8b45b;
-        --emerald: #123f70;
-        --emerald-2: #28618f;
+        --gold-2: #f0cc70;
+        --gold-light: #ffe8a3;
+        --emerald: #f0cc70;
+        --emerald-2: #26aac3;
         --emerald-deep: #08264d;
-        --cream: #f5f0fa;
-        --cream-2: #fbf7fe;
-        --ink: #123252;
+        --cream: #f5edda;
+        --cream-2: #fff4d6;
+        --ink: #f5edda;
+        --card-blue: #08264d;
+        --card-blue-deep: #041a38;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -114,8 +116,9 @@
         max-width: 720px;
         margin: 40px auto;
         background:
-            radial-gradient(600px 400px at 50% 0%, rgba(184,150,90,.10), transparent 70%),
-            linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%);
+            radial-gradient(600px 400px at 50% 0%, rgba(38,170,195,.16), transparent 70%),
+            linear-gradient(180deg, var(--card-blue) 0%, var(--card-blue-deep) 100%);
+        color: var(--ink);
         border-radius: 8px;
         box-shadow:
             0 30px 60px rgba(0,0,0,.20),
@@ -133,7 +136,7 @@
         content: '';
         position: absolute; left: 0; right: 0; bottom: 0;
         height: 60px;
-        background: linear-gradient(180deg, transparent, var(--cream-2));
+        background: linear-gradient(180deg, transparent, var(--card-blue));
     }
     /* Legacy borders — disabled for clean Design B look */
     .card::before, .card::after { content: none; }
@@ -288,15 +291,15 @@
         aspect-ratio: 5 / 3;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 12px 30px rgba(139,109,176,.18), inset 0 0 0 1px var(--gold);
-        background: var(--cream-2);
+        box-shadow: 0 12px 30px rgba(0,0,0,.28), inset 0 0 0 1px var(--gold);
+        background: var(--card-blue-deep);
     }
     .scratch-reveal {
         position: absolute; inset: 0;
         display: flex; flex-direction: column;
         align-items: center; justify-content: center;
-        background: linear-gradient(160deg, #fff, #edf3f9);
-        color: var(--ink);
+        background: linear-gradient(160deg, #0d3e70, #041a38);
+        color: var(--cream);
         padding: 24px;
         text-align: center;
     }
@@ -317,7 +320,7 @@
         font-family: 'Cormorant Garamond', serif;
         font-style: italic;
         font-size: 20px;
-        color: var(--ink);
+        color: var(--cream);
         margin-top: 8px;
     }
     #scratchCanvas {
@@ -346,8 +349,8 @@
         margin: 24px auto 0;
     }
     .cd-box {
-        background: linear-gradient(160deg, #fff, #edf3f9);
-        color: var(--emerald);
+        background: linear-gradient(160deg, #0d3e70, #041a38);
+        color: var(--gold-light);
         border: 1px solid var(--gold);
         border-radius: 6px;
         padding: 14px 6px;
@@ -364,7 +367,7 @@
         font-size: 9px;
         letter-spacing: 3px;
         margin-top: 6px;
-        color: var(--emerald);
+        color: var(--gold-light);
         text-transform: uppercase;
     }
 
@@ -382,7 +385,7 @@
         text-align: center;
         font-family: 'Marcellus', serif;
         font-size: 22px;
-        color: var(--emerald);
+        color: var(--gold);
     }
     .venue-city {
         text-align: center;
@@ -402,8 +405,8 @@
         display: inline-flex; align-items: center; gap: 8px;
         padding: 11px 20px;
         border-radius: 999px;
-        background: linear-gradient(160deg, #fff, #edf3f9);
-        color: var(--emerald);
+        background: linear-gradient(160deg, #0d3e70, #041a38);
+        color: var(--gold-light);
         border: 1px solid var(--gold);
         text-decoration: none;
         font-family: 'Montserrat', sans-serif;
@@ -589,7 +592,7 @@
         color: var(--emerald);
         font-family: 'Cormorant Garamond', serif;
         font-size: 15px;
-        background: rgba(255,255,255,.5);
+        background: rgba(255,255,255,.07);
         transition: transform .2s ease, background .2s ease;
     }
     .contact-list a:hover { transform: translateY(-2px); background: rgba(184,150,90,.12); }
