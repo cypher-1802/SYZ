@@ -12,16 +12,14 @@
 <style>
     :root {
         --gold: #d8b45b;
-        --gold-2: #f0cc70;
-        --gold-light: #ffe8a3;
-        --emerald: #f0cc70;
-        --emerald-2: #f7dc91;
-        --emerald-deep: #c99d3e;
-        --cream: #f5edda;
-        --cream-2: #fff4d6;
-        --ink: #f5edda;
-        --card-blue: #08264d;
-        --card-blue-deep: #041a38;
+        --gold-2: #123f70;
+        --gold-light: #d8b45b;
+        --emerald: #123f70;
+        --emerald-2: #28618f;
+        --emerald-deep: #08264d;
+        --cream: #f5f0fa;
+        --cream-2: #fbf7fe;
+        --ink: #123252;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,7 +29,7 @@
     body {
         font-family: 'Cormorant Garamond', serif;
         color: var(--ink);
-        background: linear-gradient(160deg, #041a38 0%, #0a315a 60%, #041a38 100%);
+        background: linear-gradient(160deg, #f7f2ea 0%, #ece0ea 60%, #f7f2ea 100%);
         overflow-x: hidden;
         min-height: 100vh;
     }
@@ -116,8 +114,8 @@
         max-width: 720px;
         margin: 40px auto;
         background:
-            radial-gradient(600px 400px at 50% 0%, rgba(31,157,190,.16), transparent 70%),
-            linear-gradient(180deg, var(--card-blue) 0%, var(--card-blue-deep) 100%);
+            radial-gradient(600px 400px at 50% 0%, rgba(184,150,90,.10), transparent 70%),
+            linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%);
         border-radius: 8px;
         box-shadow:
             0 30px 60px rgba(0,0,0,.20),
@@ -135,7 +133,7 @@
         content: '';
         position: absolute; left: 0; right: 0; bottom: 0;
         height: 60px;
-        background: linear-gradient(180deg, transparent, var(--card-blue));
+        background: linear-gradient(180deg, transparent, var(--cream-2));
     }
     /* Legacy borders — disabled for clean Design B look */
     .card::before, .card::after { content: none; }
@@ -290,15 +288,15 @@
         aspect-ratio: 5 / 3;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 12px 30px rgba(0,0,0,.28), inset 0 0 0 1px var(--gold);
-        background: var(--card-blue-deep);
+        box-shadow: 0 12px 30px rgba(139,109,176,.18), inset 0 0 0 1px var(--gold);
+        background: var(--cream-2);
     }
     .scratch-reveal {
         position: absolute; inset: 0;
         display: flex; flex-direction: column;
         align-items: center; justify-content: center;
-        background: linear-gradient(160deg, #0d3e70, #041a38);
-        color: var(--cream);
+        background: linear-gradient(160deg, #fff, #edf3f9);
+        color: var(--ink);
         padding: 24px;
         text-align: center;
     }
@@ -306,20 +304,20 @@
         font-family: 'Marcellus', serif;
         font-size: 34px;
         letter-spacing: 6px;
-        color: var(--gold-light);
+        color: var(--emerald);
         text-transform: uppercase;
     }
     .scratch-reveal .hijri {
         font-family: 'Amiri', serif;
         font-size: 18px;
-        color: var(--gold);
+        color: var(--emerald);
         margin: 8px 0;
     }
     .scratch-reveal .after {
         font-family: 'Cormorant Garamond', serif;
         font-style: italic;
         font-size: 20px;
-        color: var(--cream);
+        color: var(--ink);
         margin-top: 8px;
     }
     #scratchCanvas {
@@ -348,8 +346,8 @@
         margin: 24px auto 0;
     }
     .cd-box {
-        background: linear-gradient(160deg, #0d3e70, #041a38);
-        color: var(--gold-light);
+        background: linear-gradient(160deg, #fff, #edf3f9);
+        color: var(--emerald);
         border: 1px solid var(--gold);
         border-radius: 6px;
         padding: 14px 6px;
@@ -366,7 +364,7 @@
         font-size: 9px;
         letter-spacing: 3px;
         margin-top: 6px;
-        color: var(--gold);
+        color: var(--emerald);
         text-transform: uppercase;
     }
 
@@ -404,8 +402,8 @@
         display: inline-flex; align-items: center; gap: 8px;
         padding: 11px 20px;
         border-radius: 999px;
-        background: linear-gradient(160deg, #0d3e70, #041a38);
-        color: var(--gold-light);
+        background: linear-gradient(160deg, #fff, #edf3f9);
+        color: var(--emerald);
         border: 1px solid var(--gold);
         text-decoration: none;
         font-family: 'Montserrat', sans-serif;
@@ -510,8 +508,8 @@
     /* ---------------- Personalization ---------------- */
     .greeting {
         text-align: center;
-        background: linear-gradient(180deg, rgba(216,180,91,.14), rgba(216,180,91,.04));
-        border: 1px solid rgba(216,180,91,.4);
+        background: linear-gradient(180deg, rgba(184,150,90,.10), rgba(184,150,90,.02));
+        border: 1px solid rgba(184,150,90,.35);
         border-radius: 12px;
         padding: 20px 24px;
         margin: 0 auto 24px;
@@ -565,7 +563,7 @@
         grid-template-columns: 110px 1fr;
         gap: 14px;
         padding: 9px 0;
-        border-bottom: 1px dashed rgba(216,180,91,.35);
+        border-bottom: 1px dashed rgba(184,150,90,.3);
         font-family: 'Cormorant Garamond', serif;
         font-size: 16px;
         color: var(--ink);
@@ -591,10 +589,10 @@
         color: var(--emerald);
         font-family: 'Cormorant Garamond', serif;
         font-size: 15px;
-        background: rgba(255,255,255,.07);
+        background: rgba(255,255,255,.5);
         transition: transform .2s ease, background .2s ease;
     }
-    .contact-list a:hover { transform: translateY(-2px); background: rgba(216,180,91,.14); }
+    .contact-list a:hover { transform: translateY(-2px); background: rgba(184,150,90,.12); }
     .dress-code {
         text-align: center;
         font-family: 'Cormorant Garamond', serif;
