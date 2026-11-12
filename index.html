@@ -132,13 +132,18 @@
         box-shadow: 0 6px 18px rgba(111,138,94,.15);
     }
     .card.waleema {
-        background: linear-gradient(160deg, rgba(139,109,176,.22), rgba(168,148,201,.14));
-        box-shadow: 0 6px 18px rgba(139,109,176,.15);
+        background: linear-gradient(160deg, #0d3e70, #041a38);
+        box-shadow: 0 6px 18px rgba(8,38,77,.3);
+        border-color: #d8b45b;
     }
     .card.haldi {
         grid-column: 1 / -1;
         background: linear-gradient(160deg, rgba(232,168,40,.26), rgba(245,206,96,.16));
         box-shadow: 0 6px 18px rgba(214,140,20,.18);
+    }
+    .card.waleema:hover {
+        box-shadow: 0 20px 40px rgba(8,38,77,.4);
+        border-color: #26aac3;
     }
     .card:hover {
         transform: translateY(-6px);
@@ -164,7 +169,12 @@
         color: #4d6444;
         margin: 4px 0 10px;
     }
-    .card.waleema .title { color: #6f5b95; }
+    .card.waleema .title { color: #ffe8a3; }
+    .card.waleema .icon,
+    .card.waleema .label,
+    .card.waleema .arrow { color: #f0cc70; }
+    .card.waleema .date { color: #f5edda; }
+    .card.waleema .arrow { border-color: #d8b45b; }
     .card.haldi .title { color: #b5650d; }
     .card .date {
         font-family: 'Cormorant Garamond', serif;
