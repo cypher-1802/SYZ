@@ -11,15 +11,15 @@
 />
 <style>
     :root {
-        --gold: #b8965a;            /* deeper gold reads well on light BG */
-        --gold-2: #8a6a3a;
-        --gold-light: #d9b878;
-        --emerald: #6f8a5e;         /* sage (primary) */
-        --emerald-2: #8ba879;
-        --emerald-deep: #4d6444;
-        --cream: #f2f5ec;
-        --cream-2: #fbfaf1;
-        --ink: #3a4536;
+        --gold: #d97706;
+        --gold-2: #9a3412;
+        --gold-light: #ffe08a;
+        --emerald: #b45309;
+        --emerald-2: #d97706;
+        --emerald-deep: #7c2d12;
+        --cream: #fff0bf;
+        --cream-2: #fff9e6;
+        --ink: #713f12;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -114,7 +114,7 @@
         max-width: 720px;
         margin: 40px auto;
         background:
-            radial-gradient(600px 400px at 50% 0%, rgba(184,150,90,.10), transparent 70%),
+            radial-gradient(600px 400px at 50% 0%, rgba(217,119,6,.16), transparent 70%),
             linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%);
         border-radius: 8px;
         box-shadow:
@@ -195,7 +195,7 @@
         text-align: center;
         font-style: italic;
         font-size: 17px;
-        color: #4d3b28;
+        color: var(--ink);
         margin-top: 10px;
         line-height: 1.5;
         padding: 0 10px;
@@ -213,7 +213,7 @@
     .invite-line {
         text-align: center;
         font-size: 17px;
-        color: #4a3826;
+        color: var(--ink);
         font-style: italic;
         line-height: 1.6;
     }
@@ -258,7 +258,7 @@
         text-align: center;
         font-family: 'Cormorant Garamond', serif;
         font-size: 15px;
-        color: #6c5335;
+        color: var(--ink);
         margin-top: -4px;
         font-style: italic;
     }
@@ -276,7 +276,7 @@
     .scratch-sub {
         text-align: center;
         font-size: 15px;
-        color: #6c5335;
+        color: var(--ink);
         font-style: italic;
         margin-bottom: 14px;
     }
@@ -288,14 +288,14 @@
         aspect-ratio: 5 / 3;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 12px 30px rgba(111,138,94,.25), inset 0 0 0 1px var(--gold);
+        box-shadow: 0 12px 30px rgba(217,119,6,.2), inset 0 0 0 1px var(--gold);
         background: var(--cream);
     }
     .scratch-reveal {
         position: absolute; inset: 0;
         display: flex; flex-direction: column;
         align-items: center; justify-content: center;
-        background: linear-gradient(160deg, #7d9b6a, #4d6444);
+        background: linear-gradient(160deg, #e99a16, #a8430b);
         color: var(--cream);
         padding: 24px;
         text-align: center;
@@ -346,7 +346,7 @@
         margin: 24px auto 0;
     }
     .cd-box {
-        background: linear-gradient(160deg, #6f8a5e, #4d6444);
+        background: linear-gradient(160deg, #e99a16, #a8430b);
         color: var(--gold-light);
         border: 1px solid var(--gold);
         border-radius: 6px;
@@ -389,7 +389,7 @@
         font-family: 'Montserrat', sans-serif;
         font-size: 11px;
         letter-spacing: 3px;
-        color: #6c5335;
+        color: var(--ink);
         margin-top: 6px;
         text-transform: uppercase;
     }
@@ -402,7 +402,7 @@
         display: inline-flex; align-items: center; gap: 8px;
         padding: 11px 20px;
         border-radius: 999px;
-        background: linear-gradient(160deg, #7d9b6a, #4d6444);
+        background: linear-gradient(160deg, #e99a16, #a8430b);
         color: var(--gold-light);
         border: 1px solid var(--gold);
         text-decoration: none;
@@ -424,7 +424,7 @@
         text-align: center;
         font-style: italic;
         font-size: 17px;
-        color: #4d3b28;
+        color: var(--ink);
         line-height: 1.7;
         padding: 0 12px;
     }
@@ -508,8 +508,8 @@
     /* ---------------- Personalization ---------------- */
     .greeting {
         text-align: center;
-        background: linear-gradient(180deg, rgba(184,150,90,.10), rgba(184,150,90,.02));
-        border: 1px solid rgba(184,150,90,.35);
+        background: linear-gradient(180deg, rgba(217,119,6,.12), rgba(217,119,6,.03));
+        border: 1px solid rgba(217,119,6,.35);
         border-radius: 12px;
         padding: 20px 24px;
         margin: 0 auto 24px;
@@ -533,7 +533,7 @@
         font-family: 'Cormorant Garamond', serif;
         font-style: italic;
         font-size: 15px;
-        color: #6a5a4a;
+        color: var(--ink);
     }
     .name-ar {
         display: block;
@@ -563,7 +563,7 @@
         grid-template-columns: 110px 1fr;
         gap: 14px;
         padding: 9px 0;
-        border-bottom: 1px dashed rgba(184,150,90,.3);
+        border-bottom: 1px dashed rgba(217,119,6,.3);
         font-family: 'Cormorant Garamond', serif;
         font-size: 16px;
         color: var(--ink);
@@ -589,16 +589,16 @@
         color: var(--emerald);
         font-family: 'Cormorant Garamond', serif;
         font-size: 15px;
-        background: rgba(255,255,255,.5);
+        background: rgba(255,249,230,.8);
         transition: transform .2s ease, background .2s ease;
     }
-    .contact-list a:hover { transform: translateY(-2px); background: rgba(184,150,90,.12); }
+    .contact-list a:hover { transform: translateY(-2px); background: rgba(217,119,6,.12); }
     .dress-code {
         text-align: center;
         font-family: 'Cormorant Garamond', serif;
         font-style: italic;
         font-size: 16px;
-        color: #6a5a4a;
+        color: var(--ink);
         margin-top: 14px;
         letter-spacing: 1px;
     }
@@ -678,13 +678,13 @@
 
                 <!-- Floral spray -->
                 <svg class="floral-spray" viewBox="0 0 300 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <g fill="none" stroke="#8a6a3a" stroke-width="1" stroke-linecap="round">
+                    <g fill="none" stroke="#9a3412" stroke-width="1" stroke-linecap="round">
                         <path d="M150 30 Q 120 22 90 28 Q 60 34 30 24"/>
                         <path d="M150 30 Q 180 22 210 28 Q 240 34 270 24"/>
                         <path d="M150 30 Q 140 44 120 50"/>
                         <path d="M150 30 Q 160 44 180 50"/>
                     </g>
-                    <g fill="#8a6a3a" opacity="0.85">
+                    <g fill="#9a3412" opacity="0.85">
                         <circle cx="150" cy="30" r="5"/>
                         <circle cx="90" cy="28" r="3.2"/>
                         <circle cx="30" cy="24" r="2.8"/>
@@ -693,14 +693,14 @@
                         <circle cx="120" cy="50" r="2.4"/>
                         <circle cx="180" cy="50" r="2.4"/>
                     </g>
-                    <g fill="#d9b878" opacity="0.8">
+                    <g fill="#f2a900" opacity="0.8">
                         <circle cx="150" cy="30" r="2"/>
                         <ellipse cx="60" cy="30" rx="5" ry="2" transform="rotate(-20 60 30)"/>
                         <ellipse cx="240" cy="30" rx="5" ry="2" transform="rotate(20 240 30)"/>
                         <ellipse cx="135" cy="42" rx="4" ry="1.6" transform="rotate(-30 135 42)"/>
                         <ellipse cx="165" cy="42" rx="4" ry="1.6" transform="rotate(30 165 42)"/>
                     </g>
-                    <g fill="#6f8a5e" opacity="0.7">
+                    <g fill="#d97706" opacity="0.7">
                         <ellipse cx="75" cy="32" rx="5" ry="2.2" transform="rotate(-25 75 32)"/>
                         <ellipse cx="105" cy="26" rx="5" ry="2.2" transform="rotate(15 105 26)"/>
                         <ellipse cx="45" cy="22" rx="5" ry="2.2" transform="rotate(-15 45 22)"/>
